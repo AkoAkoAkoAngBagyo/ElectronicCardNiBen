@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Note of Gratitude | The Eras Edition</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="ambient-bg" aria-hidden="true">
+    <span class="sparkle s1">✦</span>
+    <span class="sparkle s2">✧</span>
+    <span class="sparkle s3">✦</span>
+    <span class="sparkle s4">✧</span>
+    <span class="sparkle s5">✦</span>
+    <span class="sparkle s6">✧</span>
+    <span class="sparkle s7">✦</span>
+    <span class="sparkle s8">✧</span>
+  </div>
+
+  <div id="confetti-layer" aria-hidden="true"></div>
+
+  <section id="lock-screen" class="lock-overlay" role="dialog" aria-modal="true" aria-labelledby="lock-title">
+    <div class="lock-card">
+      <div class="lock-crest">✦ THE SECRET SESSION ✦</div>
+      <h1 id="lock-title">Before You Read...</h1>
+      <p class="lyric-prompt">
+        Complete the lyrics to unlock:<br />
+        <span class="lyric-quote">“Help, I'm still at the <span class="blank-line">___</span>”</span>
+      </p>
+
+      <form id="unlock-form" autocomplete="off">
+        <div class="input-group" id="input-wrapper">
+          <input
+            type="text"
+            id="lyric-input"
+            placeholder="Type the password..."
+            aria-label="Password or missing lyric word"
+            required
+          />
+          <button type="submit" id="unlock-btn">Unlock</button>
+        </div>
+        <p id="error-msg" class="error-text" role="alert" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Transition Page (Appears after entering "restaurant") -->
+  <section id="transition-screen" class="lock-overlay hidden" role="dialog" aria-modal="true">
+    <div class="lock-card transition-card">
+      <div class="lock-crest">✦ WAIT A MINUTE ✦</div>
+      <p class="transition-message" id="transition-msg-text"></p>
+      <button type="button" id="proceed-btn" class="action-btn">Proceed to Letter ✨</button>
+    </div>
+  </section>
+
+  <main id="main-stage" class="stage locked-blur">
+    <p class="instruction-hint" id="envelope-hint">Tap the wax seal to open your letter</p>
+
+    <div class="envelope-wrapper" id="envelope-wrapper" tabindex="0" role="button" aria-label="Open thank-you envelope">
+      <div class="envelope">
+        <div class="envelope-back"></div>
+
+        <article class="letter" id="letter-card">
+          <div class="letter-border">
+            <header class="letter-header">
+              <span class="era-eyebrow">FROM THE DESK OF A GRATEFUL STUDENT</span>
+              <!-- EDIT PROFESSOR'S NAME BELOW -->
+              <h2 class="recipient">To Ma'em Roan the soafer bait at magandang prof ng ITWS,</h2>
+              <!-- EDIT COURSE / SUBJECT BELOW -->
+              <p class="course-tag">The best ITWS professor ever! Not joke po </p>
+            </header>
+
+            <div class="letter-body">
+              <!-- EDIT YOUR THANK-YOU MESSAGE BELOW -->
+              <p>
+                Hi Ma'am Roan! Thanks much for last a.y. and this year's a.y. din sana naman po malaman naming kung anong section tuturuan mo next sem,
+                para maiwasan! CHAROT, Joke lang po Ma'am baka makakita ako ng singko awa na lng ma'am HAHAHAHAH
+              </p>
+              <p>
+                Mercy na lng Ma'am kung sakaling web systems pipiliin ko sa 3rd year, thanks a lot ulit ma'am! Sorry na lng poe dahil natutulog ako nung una sa klase mo hehehehehehhehehehhehehhe
+               Hulaan niyo Ma'am yung kanta.
+              </p>
+            </div>
+
+            <footer class="letter-footer">
+              <div class="sign-off-block">
+                <span class="sign-off-label">I will always remember all too well,</span>
+                <!-- EDIT YOUR NAME BELOW -->
+                <p class="sender-name">Ben (nag AI na lng)</p>
+              </div>
+
+              <div class="tracklist-badge">
+                <span class="vinyl-dot">●</span>
+                <span>TRACK 01: THANK YOU FOR A GREAT SEMESTER</span>
+                <span class="track-time">04:13</span>
+              </div>
+            </footer>
+          </div>
+        </article>
+
+        <div class="envelope-pocket"></div>
+        <div class="envelope-flap"></div>
+
+        <div class="wax-seal" aria-hidden="true">
+          <div class="wax-inner">
+            <span>13</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Add this inside index.html -->
+<audio id="bg-audio" loop preload="auto">
+  <source src="background-music.mp3" type="audio/mpeg" />
+</audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
